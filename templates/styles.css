@@ -10,6 +10,12 @@ body{
     height: 100vh;
 }
 
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
 nav {
     position: fixed;
     display: flex;
@@ -100,7 +106,7 @@ aside {
 .subjects{
     padding: 0;
     padding-top: 8px;
-    height: 85%;
+    height: 797px;
     border: red 3px solid;
     display: flex;
     align-items: center;
@@ -109,12 +115,25 @@ aside {
 .subjects li {
     display: block;
     margin-bottom: 8px;
+
 }
 
 .subjects li a {
     display: block;
-    height: 99px;
-    width: calc(20vw - 16px);
-    border: blue 3px solid;
+    height: calc(106px - 16px);
+    width: calc(20vw - 32px);
     background-color: blue;
+    border-radius: 10px;
+    padding: 8px; 
+    color: white;
+}
+
+.subjects li a p{ 
+    color: white;
+    font-size: 1.5rem;
+    margin: 8px;
+}
+
+main{
+    flex: 1;
 }
