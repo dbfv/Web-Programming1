@@ -1,6 +1,7 @@
 <?php
 
-include '../includes/queries/users.php';
+include  '../includes/queries/users.php';
+include  '../includes/queries/subjects.php';
 
 ?>
 
@@ -14,6 +15,7 @@ include '../includes/queries/users.php';
 </head> 
 
 <body>
+
     <nav>
         <div class="logo">
             <img src="https://icons.veryicon.com/png/o/miscellaneous/tmm/a1-31-40x40.png" alt="">
@@ -59,7 +61,7 @@ include '../includes/queries/users.php';
                 <?php foreach ($users as $user){ ?>
                 <li>
                     <a href="#">
-                        <img src="../public/<?= $user['profile_image'] ?>" alt="">
+                        <img src="../public/<?= $user['profile_image'] ?>">
                         <p> <?php echo $user['name']; ?> </p>
                     </a>
                 </li>
