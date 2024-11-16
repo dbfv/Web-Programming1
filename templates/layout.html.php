@@ -11,7 +11,7 @@ include '../includes/queries/users.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?></title>
-    <link rel="stylesheet" href="styles.css?v=1.0">
+    <link rel="stylesheet" href="styles.css?v=2.0">
 </head>
 
 <body>
@@ -40,8 +40,8 @@ include '../includes/queries/users.php';
                 <?php foreach ($subjects as $subject) { ?>
                     <li>
                         <a href="">
-                            <p> <?php $subject['name'] ?> </p>
-                            <span class="description">This is the description for the subject
+                            <b><p> <?php echo $subject['name'] ?> </p></b>
+                            <span class="description"> <?php echo $subject['description'] ?>
                             </span>
                         </a>
                     </li>
