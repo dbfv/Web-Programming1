@@ -109,7 +109,6 @@ aside {
     height: 797px;
     display: flex;
     align-items: center;
-    flex-direction: column;
 }
 .subjects li {
     display: block;
