@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 *{
     margin: 0;
     text-decoration: none;
@@ -216,14 +217,40 @@ main {
     margin-left: 8px;
 }
 
-.posts { 
-    width: 100%;
-    /* height: auto; */
-    height: 800px;
-    background-color: rgba(0, 120, 120, 0.2);
+
+
+/* posts */
+.post{ 
+    background-color: gray;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 8px;
 }
 
-.posts img{ 
-    margin-left: 8px;
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    margin-right: 8px;
+}
+
+.header-right {
+    display: flex;
+}
+
+.icon {
+    margin-left: 16px;
+    color: #2f4858; /* Adjust color as needed */
 }
