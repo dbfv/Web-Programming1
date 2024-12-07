@@ -1,0 +1,9 @@
+subjects section should load subjects that users saved! as of now, it is only for demonstration!
+
+same practice for users 
+
+implement the post section
+
+bcrypt 
+
+email 
