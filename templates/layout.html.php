@@ -1,5 +1,5 @@
 <?php
-include '../includes/queries/subjects.php';
+include '../includes/queries/modules.php';
 include '../includes/queries/users.php';
 
 ?>
@@ -11,7 +11,8 @@ include '../includes/queries/users.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?></title>
-    <link rel="stylesheet" href="styles.css?v=2.0">
+    <!-- <link rel="stylesheet" href="styles.css?v=5.0"> -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -37,22 +38,19 @@ include '../includes/queries/users.php';
         <aside style="left: 0">
             <ul class="subjects">
                 <!-- php for subjects goes here-->
-                <?php foreach ($subjects as $subject) { ?>
+                <?php foreach ($modules as $module) { ?>
                     <li>
                         <a href="">
-                            <b><p> <?php echo $subject['name'] ?> </p></b>
-                            <span class="description"> <?php echo $subject['description'] ?>
+                            <b>
+                                <p> <?php echo $module['name'] ?> </p>
+                            </b>
+                            <span class="description"> <?php echo $module['code'] ?>
                             </span>
                         </a>
                     </li>
                 <?php } ?>
             </ul>
         </aside>
-
-        <main>
-            <div class="post">Content goes here</div>
-
-        </main>
 
         <aside style="right: 0">
             <ul class="users">
@@ -61,13 +59,39 @@ include '../includes/queries/users.php';
                 <?php foreach ($users as $user) { ?>
                     <li>
                         <a href="#">
-                            <img src="../public/<?= $user['profile_image'] ?>">
+                            <img src="../public/<?= $user['avatar'] ?>">
                             <p> <?php echo $user['name']; ?> </p>
                         </a>
                     </li>
                 <?php } ?>
             </ul>
         </aside>
+
+        <main>
+        <div class="post">
+            <div class="user-info">
+                <img src="avatar.jpg" alt="User Avatar" class="avatar">
+                <span class="username">JohnDoe</span>
+            </div>
+            <div class="post-content">
+                <p>This is a sample question about coursework.</p>
+                <img src="sample.jpg" alt="Sample Image">
+                <p>Caption for the image.</p>
+            </div>
+            <div class="interaction">
+                <button class="like">Like</button>
+                <button class="dislike">Dislike</button>
+            </div>
+            <div class="comments">
+                <div class="comment">
+                    <span class="username">JaneDoe</span>
+                    <p>This is a comment.</p>
+                </div>
+                <textarea id="new-comment" placeholder="Add a comment..."></textarea>
+                <button id="submit-comment">Comment</button>
+            </div>
+        </div>
+        </main>
     </div>
 
 </body>
