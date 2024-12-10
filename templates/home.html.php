@@ -11,7 +11,7 @@ include '../includes/queries/posts.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?></title>
+    <title><?= $title?></title>
     <link rel="stylesheet" href="styles.css?v=.0">
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
@@ -31,7 +31,9 @@ include '../includes/queries/posts.php';
             <a href="" class="menu-item"><i class="bi bi-plus"></i></a>
             <a href="" class="menu-item"><i class="bi bi-bell"></i></a>
             <a href="" class="menu-item"><i class="bi bi-save"></i></a>
-            <!-- <a href="" class="menu-item"><img src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/462705746_1298887404741619_1990410904088423499_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=mEKJMNGOsYcQ7kNvgHodpYL&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=ApjfaWbPX2Plch2Bz6GAOvQ&oh=00_AYCt8UA298fNMUQZgTp3bvJaTDkqux9pW-d1t1XKfARO9g&oe=673566D7" alt=""></a> -->
+            <a href="" class="menu-item"><img
+                    src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/462705746_1298887404741619_1990410904088423499_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=mEKJMNGOsYcQ7kNvgHodpYL&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=ApjfaWbPX2Plch2Bz6GAOvQ&oh=00_AYCt8UA298fNMUQZgTp3bvJaTDkqux9pW-d1t1XKfARO9g&oe=673566D7"
+                    alt=""></a>
         </div>
     </nav>
 
@@ -57,7 +59,7 @@ include '../includes/queries/posts.php';
             <ul class="users">
 
                 <!-- php for users goes here -->
-                
+
                 <?php foreach ($users as $user) { ?>
                     <li>
                         <a href="#">
@@ -70,31 +72,34 @@ include '../includes/queries/posts.php';
         </aside>
 
         <main>
-        <?php foreach($posts as $post) { ?>
-        <div class="post">
-            <div class="user-info">
-                <img src="../images/public/<?php $user['avatar'] ?>" alt="User Avatar" class="avatar">
-                <span class="username"><?php $user['username']?></span>
-            </div>
-            <div class="post-content">
-                <p><? echo $post['content']?></p>
-                <img src="sample.jpg" alt="Sample Image">
-                <p>Caption for the image.</p>
-            </div>
-            <div class="interaction">
-                <button class="like">Like</button>
-                <button class="dislike">Dislike</button>
-            </div>
-            <div class="comments">
-                <div class="comment">
-                    <span class="username">JaneDoe</span>
-                    <p>This is a comment.</p>
+            <?php foreach ($posts as $post) { ?>
+                <div class="post">
+                    <div class="user-info">
+                        <img src="../images/public/<?php echo $user['avatar']; ?>" alt="User  Avatar" class="avatar">
+                        <span class="username"><?php echo $user['username']; ?></span>
+                    </div>
+                    <div class="post-content">
+                        <h2><?php echo $post['title']; ?></h2>
+                        <p><?php echo $post['content']; ?></p>
+                        <?php if (!empty($post['image_path'])) { ?>
+                            <img src="../images/post_images/<?php echo $post['image_path']; ?>">
+                        <?php } ?>
+
+                    </div>
+                    <div class="interaction">
+                        <button class="like">Like</button>
+                        <button class="dislike">Dislike</button>
+                    </div>
+                    <div class="comments">
+                        <div class="comment">
+                            <span class="username">JaneDoe</span>
+                            <p>This is a comment.</p>
+                        </div>
+                        <textarea id="new-comment" placeholder="Add a comment..."></textarea>
+                        <button id="submit-comment">Comment</button>
+                    </div>
                 </div>
-                <textarea id="new-comment" placeholder="Add a comment..."></textarea>
-                <button id="submit-comment">Comment</button>
-            </div>
-        </div>
-        <?php } ?>
+            <?php } ?>
         </main>
     </div>
 
