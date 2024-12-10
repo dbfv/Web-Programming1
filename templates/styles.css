@@ -160,9 +160,8 @@ main {
     position: absolute;
     top: 56px;
     left: 20vw;
-    width: 60vw; 
+    width: calc(60vw - 16px); 
     height: auto;
-
 }
 
 .users{
@@ -198,7 +197,7 @@ main {
 .post {
     background-color: #f9f9f9;
     padding: 20px;
-    margin: 20px 8px;
+    margin: 8px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
