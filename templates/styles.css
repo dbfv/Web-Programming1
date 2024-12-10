@@ -104,35 +104,6 @@ aside {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* .subjects{
-    padding: 0;
-    padding-top: 8px;
-    height: 797px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.subjects li {
-    display: block;
-    margin-bottom: 8px;
-}
-
-.subjects li a {
-    display: block;
-    height: calc(106px - 16px);
-    width: calc(20vw - 32px);
-    background-image: url('https://img.pikbest.com/wp/202345/full-hd-wallpaper-of-beach_9601041.jpg!sw800');
-    border-radius: 10px;
-    padding: 8px; 
-    color: white;
-}
-
-.subjects li a p{ 
-    color: white;
-    font-size: 1.5rem;
-    margin-bottom: 8px;
-} */
-
 .subjects {
     padding: 0;
     padding-top: 8px;
@@ -221,7 +192,7 @@ main {
 
 /* posts */
 .post{ 
-    background-color: gray;
+    background-color: #f9f9f9;
     margin-left: 8px;
     margin-right: 8px;
     margin-top: 8px;
@@ -253,4 +224,134 @@ main {
 .icon {
     margin-left: 16px;
     color: #2f4858; /* Adjust color as needed */
+}
+
+.post-body {
+    padding: 16px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 8px;
+}
+
+.content {
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.image-container {
+    flex: 1 1 calc(50% - 16px);
+    max-width: calc(50% - 16px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.caption {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+.comments-section {
+    margin-top: 16px;
+}
+
+.comments-section h3 {
+    font-size: 1.2rem;
+    color: #2f4858;
+}
+
+.comment {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.add-comment {
+    display: flex;
+    margin-top: 8px;
+}
+
+.comment-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.submit-comment {
+    padding: 8px 16px;
+    background-color: #2f4858;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-comment:hover {
+    background-color: #e38bee;
+}
+
+
+
+.comments-line {
+    width: 100%;
+    height: 2px;
+    background-color: lightgrey;
+    margin: 16px 0;
+}
+
+.vertical-images {
+    height: auto;
+    list-style-type: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.image-container {
+    text-align: center;
+    width: 100%;
+}
+
+.vertical-images {
+    list-style-type: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.vertical-images li {
+    margin-bottom: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical-images img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.caption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #666;
+    width: 100%;
+
 }
