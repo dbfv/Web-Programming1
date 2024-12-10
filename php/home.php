@@ -1,13 +1,9 @@
 <?php 
 // require_once "../includes/check.php";
-
+require '../includes/connect_db.php';
 
 $title = "Home";
 ob_start();
-
-include "../includes/connect_db.php";
-echo 'ngu';
-
 $sql = "SELECT posts.* FROM posts
         INNER JOIN users ON posts.user_id = users.id
         INNER JOIN modules ON posts.module_id = modules.id
