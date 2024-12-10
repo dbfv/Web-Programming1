@@ -1,6 +1,7 @@
 <?php
 include '../includes/queries/modules.php';
 include '../includes/queries/users.php';
+include '../includes/queries/posts.php';
 
 ?>
 
@@ -11,8 +12,8 @@ include '../includes/queries/users.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?></title>
-    <!-- <link rel="stylesheet" href="styles.css?v=5.0"> -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=.0">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 
 <body>
@@ -56,10 +57,11 @@ include '../includes/queries/users.php';
             <ul class="users">
 
                 <!-- php for users goes here -->
+                
                 <?php foreach ($users as $user) { ?>
                     <li>
                         <a href="#">
-                            <img src="../public/<?= $user['avatar'] ?>">
+                            <img src="../images/public/<?= $user['avatar'] ?>">
                             <p> <?php echo $user['name']; ?> </p>
                         </a>
                     </li>
@@ -68,13 +70,14 @@ include '../includes/queries/users.php';
         </aside>
 
         <main>
+        <?php foreach($posts as $post) { ?>
         <div class="post">
             <div class="user-info">
-                <img src="avatar.jpg" alt="User Avatar" class="avatar">
-                <span class="username">JohnDoe</span>
+                <img src="../images/public/<?php $user['avatar'] ?>" alt="User Avatar" class="avatar">
+                <span class="username"><?php $user['username']?></span>
             </div>
             <div class="post-content">
-                <p>This is a sample question about coursework.</p>
+                <p><? echo $post['content']?></p>
                 <img src="sample.jpg" alt="Sample Image">
                 <p>Caption for the image.</p>
             </div>
@@ -91,6 +94,7 @@ include '../includes/queries/users.php';
                 <button id="submit-comment">Comment</button>
             </div>
         </div>
+        <?php } ?>
         </main>
     </div>
 
