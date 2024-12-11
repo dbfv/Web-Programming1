@@ -340,3 +340,82 @@ button:hover {
     transition: transform 0.3s;
 }
 
+/* Profile.html.php */
+.profile {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.profile h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-info .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 2px solid #007bff;
+}
+
+.profile-info p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 16px;
+}
+
+.profile-info strong {
+    color: #007bff;
+}
+.edit-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+.edit-profile {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.edit-profile h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.edit-profile input[type="text"],
+.edit-profile input[type="email"],
+.edit-profile select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid blue;}
