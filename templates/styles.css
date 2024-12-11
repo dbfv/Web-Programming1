@@ -332,11 +332,11 @@ button:hover {
 }
 
 .post-content img {
-    width: 100%; /* Ensures the image is responsive */
-    height: auto; /* Maintains the aspect ratio */
-    border-radius: 8px; /* Adds rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-    margin: 10px 0; /* Adds space above and below the image */
-    transition: transform 0.3s; /* Smooth scaling effect on hover */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    transition: transform 0.3s;
 }
 

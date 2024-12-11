@@ -4,16 +4,13 @@
 foreach ($posts as $post) { ?>
     <div class="post">
         <div class="user-info">
-            <img src="../images/public/<?php echo $post['avatar']; ?>" alt="User  Avatar" class="avatar">
+            <img src="../images/public/<?php echo $post['avatar']; ?>" class="avatar">
             <span class="username"><?php echo $post['username']; ?></span>
         </div>
         <div class="post-content">
             <h2><?php echo $post['title']; ?></h2>
             <p><?php echo $post['content']; ?></p>
-            <?php if (!empty($post['image_path'])) { ?>
-                <img src="../images/post_images/<?php echo $post['image_path']; ?>">
-            <?php } ?>
-
+            <img src="../images/post_images/<?= $post['image_path'] ?>">
         </div>
         <div class="interaction">
             <button class="like">Like</button>
