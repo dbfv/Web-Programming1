@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include "../includes/connect_db.php";
 
 $username = $_POST['username'];
@@ -19,7 +20,8 @@ if (isset($user) && $password == $user['password']) {
     header("Location: index.php");
     exit;
 } else {
-    header("Location: ../php/login.php?error=Incorrect username or password");
+    $_SESSION['status'] = 'Invalid username or password.';
+    header("Location: ../templates/login.html.php");
     exit;
 }
 
