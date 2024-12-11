@@ -189,11 +189,12 @@ a {
 </head>
 
 <body>
-    <form autocomplete='off' class='form'>
+    <form action="../php/login.php" autocomplete='off' class='form' method="post">
         <div class='control'>
             <h1>
                 Sign In
             </h1>
+            <p>try: johndoe password123</p>
         </div>
         <div class='control block-cube block-input'>
             <input name='username' placeholder='Username' type='text'>
@@ -219,7 +220,7 @@ a {
                 <div class='bg-inner'></div>
             </div>
         </div>
-        <button class='btn block-cube block-cube-hover' type='button'>
+        <button class='btn block-cube block-cube-hover' type='submit'>
             <div class='bg-top'>
                 <div class='bg-inner'></div>
             </div>
