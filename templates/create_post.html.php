@@ -4,7 +4,7 @@
 ?>
 
 <h1>What's your question to the world?</h1>
-<form action="../php/create_post.php" method="POST" enctype="multipart/form-data">
+<form action="../php/create_post.php"  method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label for="module">Select Module:</label>
         <select id="module" name="module" required>
@@ -26,7 +26,7 @@
     </div>
     <div class="form-group">
         <label for="image">Upload Image:</label>
-        <input type="file" id="image" name="image" accept="image/*">
+        <input type="file" id="image" name="image_path" accept="image/*">
     </div>
-    <button type="submit">Submit Post</button>
+    <button name="post" type="submit">Submit Post</button>
 </form>

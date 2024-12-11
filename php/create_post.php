@@ -1,21 +1,20 @@
 <?php
+require '../includes/authorization.php';
 include '../includes/connect_db.php'; 
 include '../includes/queries/modules.php';
 $title = "Post";
 ob_start();
 
-
 if(isset($_POST['post'])) {
-    $module = $_POST['module_id'];
+    $module = $_POST['module'];
     $user = $_SESSION['user']['id'];
     $title = $_POST['title'];
     $content = $_POST['content'];
     $post_date = date('Y-m-d');
-
     $image_path = NULL;
     if(isset($_FILES['image_path']) && $_FILES['image_path']['error'] === 0) {
         $filename = basename($_FILES['image_path']['name']); 
-        move_uploaded_file($_FILES['image_path']['tmp_name'], '../images/posts/'. $filename);
+        move_uploaded_file($_FILES['image_path']['tmp_name'], '../images/post_images/'. $filename);
         $image_path = $filename;
     }
 
