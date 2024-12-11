@@ -20,6 +20,8 @@ if (isset($_POST['submit'])) {
     $stmt->bindValue(':user_id', $user_id);
     $stmt->execute();
 
+    header ("Location: ../php/profile.php");
+
 } else {
     include "../templates/edit_profile.html.php";
 }
