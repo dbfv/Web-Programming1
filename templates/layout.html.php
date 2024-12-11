@@ -11,7 +11,7 @@ include '../includes/queries/posts.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title?></title>
+    <title><?= $title ?></title>
     <link rel="stylesheet" href="../templates/styles.css?v=6.0">
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
@@ -20,7 +20,9 @@ include '../includes/queries/posts.php';
 
     <nav>
         <div class="logo">
-            <img src="https://icons.veryicon.com/png/o/miscellaneous/tmm/a1-31-40x40.png" alt="">
+            <a href="../php/home.php"> <!-- Link to home.php -->
+                <img src="https://icons.veryicon.com/png/o/miscellaneous/tmm/a1-31-40x40.png" alt="Logo">
+            </a>
         </div>
         <div class="scrolling-text">
             <p>something is here...</p>
@@ -32,8 +34,7 @@ include '../includes/queries/posts.php';
             <a href="" class="menu-item"><i class="bi bi-bell"></i></a>
             <a href="" class="menu-item"><i class="bi bi-save"></i></a>
             <a href="../php/profile.php" class="menu-item"><img
-                    src="../images/public/<?= $_SESSION['user']['avatar'] ?>"
-                    alt=""></a>
+                    src="../images/public/<?= $_SESSION['user']['avatar'] ?>" alt=""></a>
         </div>
     </nav>
 
@@ -72,7 +73,7 @@ include '../includes/queries/posts.php';
         </aside>
 
         <main>
-            <?php echo $output ?> 
+            <?php echo $output ?>
         </main>
     </div>
 
