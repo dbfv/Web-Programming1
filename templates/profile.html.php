@@ -11,6 +11,7 @@
         </div>
     </div>
     <a href="../php/edit_profile.php" class="edit-button">Edit Profile</a>
+    <a href="../php/logout.php" class="logout-button" style="background-color: red; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; margin-left: 10px;">Logout</a>
 </div>
 
 <div class="posts">
