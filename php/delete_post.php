@@ -1,27 +1,14 @@
 <?php
-require_once "../includes/authorization.php";
-include '../includes/connect_db.php';
+include '../includes/connect_db.php'; // Include your database connection
 
-if (isset($_GET['id'])) {
-    $postId = $_GET['id'];
-    $userId = $_SESSION['user']['id'];
+    $postId = intval($_GET['id']); // Get the post ID from the URL and ensure it's an integer
 
-    // Check if the post belongs to the user
-    $sql = "SELECT * FROM posts WHERE id = :postId AND user_id = :userId";
+    // Prepare a SQL statement to delete the post
+    $sql = "DELETE FROM posts WHERE id = :id";
     $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':postId', $postId);
-    $stmt->bindValue(':userId', $userId);
-    $stmt->execute();
+    $stmt->bindValue(':id', $postId, PDO::PARAM_INT);
 
-    if ($stmt->rowCount() > 0) {
-        // Post exists and belongs to the user, proceed to delete
-        $sql = "DELETE FROM posts WHERE id = :postId";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':postId', $postId);
-        $stmt->execute();
-    }
-
-    header("Location: ../php/home.php"); // Redirect back to home
-    exit;
-}
-?>
+    $stmt->execute() ;
+        // Redirect to the user's profile or posts page with a success message
+        header("Location: ../php/profile.php");
+        exit();

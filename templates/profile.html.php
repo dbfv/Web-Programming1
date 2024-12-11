@@ -29,6 +29,8 @@
                             echo date('H:i d M Y', strtotime($date)); // Format the post date
                             ?>
                         </span>
+                        <a href="../php/delete_post.php?id=<?php echo $post['id']; ?>" class="delete-button"
+                            onclick="return confirm('Are you sure you want to delete this post?');" style="color: grey; font-size: 20px; margin-left: 10px;">X</a>
                     </div>
                 </div>
                 <div class="post-content">
