@@ -65,7 +65,7 @@ include '../includes/queries/posts.php';
                     <li>
                         <a href="#">
                             <img src="../images/public/<?= $user['avatar'] ?>">
-                            <p> <?php echo $user['name']; ?> </p>
+                            <p> <?php echo $user['username']; ?> </p>
                         </a>
                     </li>
                 <?php } ?>
