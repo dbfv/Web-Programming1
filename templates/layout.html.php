@@ -28,11 +28,11 @@ include '../includes/queries/posts.php';
 
         </div>
         <div class="menu">
-            <a href="" class="menu-item"><i class="bi bi-plus"></i></a>
+            <a href="../php/create_post.php" class="menu-item"><i class="bi bi-plus"></i></a>
             <a href="" class="menu-item"><i class="bi bi-bell"></i></a>
             <a href="" class="menu-item"><i class="bi bi-save"></i></a>
-            <a href="" class="menu-item"><img
-                    src="https://scontent.fhan5-9.fna.fbcdn.net/v/t39.30808-6/462705746_1298887404741619_1990410904088423499_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=mEKJMNGOsYcQ7kNvgHodpYL&_nc_zt=23&_nc_ht=scontent.fhan5-9.fna&_nc_gid=ApjfaWbPX2Plch2Bz6GAOvQ&oh=00_AYCt8UA298fNMUQZgTp3bvJaTDkqux9pW-d1t1XKfARO9g&oe=673566D7"
+            <a href="../php/profile.php" class="menu-item"><img
+                    src="../images/public/<?= $_SESSION['user']['avatar'] ?>"
                     alt=""></a>
         </div>
     </nav>
