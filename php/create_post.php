@@ -1,26 +1,41 @@
 <?php
-include 'connect_db.php'; // Include your database connection
+include '../includes/connect_db.php'; 
+include '../includes/queries/modules.php';
+$title = "Post";
+ob_start();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $module_id = $_POST['module']; // Get the selected module ID
+
+if(isset($_POST['post'])) {
+    $module = $_POST['module_id'];
+    $user = $_SESSION['user']['id'];
+    $title = $_POST['title'];
     $content = $_POST['content'];
-    $image = $_FILES['image'];
+    $post_date = date('Y-m-d');
 
-    // Handle image upload if an image is provided
-    if ($image['error'] == 0) {
-        $target_dir = "../images/post_images";
-        $target_file = $target_dir . basename($image["name"]);
-        move_uploaded_file($image["tmp_name"], $target_file);
-    } else {
-        $target_file = null; // No image uploaded
+    $image_path = NULL;
+    if(isset($_FILES['image_path']) && $_FILES['image_path']['error'] === 0) {
+        $filename = basename($_FILES['image_path']['name']); 
+        move_uploaded_file($_FILES['image_path']['tmp_name'], '../images/posts/'. $filename);
+        $image_path = $filename;
     }
 
-    // Insert the post into the database
-    $stmt = $pdo->prepare("INSERT INTO posts (module_id, content, image) VALUES (:module_id, :content, :image)");
-    $stmt->execute(['module_id' => $module_id, 'content' => $content, 'image' => $target_file]);
+    $sql = "INSERT INTO posts (module_id, user_id, title, content, image_path, post_date)
+            VALUES (:module, :user, :title, :content, :image_path, :post_date)";
 
-    // Redirect back to the main page or wherever you want
-    header("Location: index.php");
-    exit();
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':module', $module);
+    $stmt->bindParam(':user', $user);
+    $stmt->bindParam(':title', $title);
+    $stmt->bindParam(':content', $content);
+    $stmt->bindParam(':image_path', $image_path);
+    $stmt->bindParam(':post_date', $post_date);
+    $stmt->execute();
+    header("location: ../php/home.php");
+
+} else {
+    $sql = "SELECT * FROM modules";
+    $modules = $pdo->query($sql);
 }
-?>
+include '../templates/create_post.html.php';
+$output = ob_get_clean();
+include "../templates/layout.html.php";
