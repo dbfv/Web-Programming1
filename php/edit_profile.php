@@ -20,9 +20,11 @@ if (isset($_POST['submit'])) {
     $stmt->bindValue(':user_id', $user_id);
     $stmt->execute();
     $sql = "SELECT * FROM users WHERE id = :id";
-    $statement = $pdo->prepare($sql);
-    $statement->bindValue(':id', $id);
-    $statement->execute();
+    $_SESSION['user']['name'] = $name;
+    $_SESSION['user']['username'] = $username;
+    $_SESSION['user']['email'] = $email;
+    $_SESSION['user']['phone_number'] = $phone_number;
+    $_SESSION['user']['sex'] = $sex;
 
     header ("Location: ../php/profile.php");
 

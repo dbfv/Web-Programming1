@@ -10,5 +10,37 @@
             <p><strong>Sex:</strong> <?php echo htmlspecialchars($user['sex']); ?></p>
         </div>
     </div>
-    <a href= "../php/edit_profile.php" class="edit-button">Edit Profile</a>
+    <a href="../php/edit_profile.php" class="edit-button">Edit Profile</a>
+</div>
+
+<div class="posts">
+    <h2>Your Posts</h2>
+    <?php if (count($userPosts) > 0): ?>
+        <?php foreach ($userPosts as $post): ?>
+            <div class="post">
+                <div class="user-info">
+                    <img src="../images/public/<?php echo $post['avatar']; ?>" class="avatar">
+                    <div>
+                        <span class="username"><?php echo $post['username']; ?></span>
+                        <span class="post-time">
+                            <?php
+                            date_default_timezone_set('Asia/Bangkok'); // Set the timezone
+                            $date = $post['post_date'];
+                            echo date('H:i d M Y', strtotime($date)); // Format the post date
+                            ?>
+                        </span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <h2><?php echo htmlspecialchars($post['title']); ?></h2>
+                    <p><?php echo htmlspecialchars($post['content']); ?></p>
+                    <?php if ($post['image_path']): ?>
+                        <img src="../images/post_images/<?php echo htmlspecialchars($post['image_path']); ?>" alt="Post Image">
+                    <?php endif; ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>You have not made any posts yet.</p>
+    <?php endif; ?>
 </div>

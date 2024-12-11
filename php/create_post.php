@@ -10,7 +10,11 @@ if(isset($_POST['post'])) {
     $user = $_SESSION['user']['id'];
     $title = $_POST['title'];
     $content = $_POST['content'];
-    $post_date = date('Y-m-d');
+    $post_date = 
+    date_default_timezone_set('Asia/Bangkok'); // Set the timezone to UTC+7
+    $current_date = date('H:i d M Y'); // Get the current date and time in the specified format
+    echo "Current date and time in UTC+7: " . $current_date;
+    
     $image_path = NULL;
     if(isset($_FILES['image_path']) && $_FILES['image_path']['error'] === 0) {
         $filename = basename($_FILES['image_path']['name']); 

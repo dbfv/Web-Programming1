@@ -1,10 +1,7 @@
 <?php
 session_start();
-if (isset($_SESSION['status'])) {
-  $status = $_SESSION['status'];
-} else {
-  $status = '';
-}
+$status = isset($_SESSION['status']) ? $_SESSION['status'] : ''; 
+unset($_SESSION['status']); 
 ?>
 
 <!DOCTYPE html>
@@ -121,7 +118,6 @@ if (isset($_SESSION['status'])) {
       right: 2px;
       bottom: 2px;
       background: rgba(33, 33, 33, 1);
-      /* Assuming $bg_body is a dark color */
       transition: all 0.2s ease-in-out;
     }
 

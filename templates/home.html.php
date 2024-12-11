@@ -5,7 +5,16 @@ foreach ($posts as $post) { ?>
     <div class="post">
         <div class="user-info">
             <img src="../images/public/<?php echo $post['avatar']; ?>" class="avatar">
-            <span class="username"><?php echo $post['username']; ?></span>
+            <div>
+                <span class="username"><?php echo $post['username']; ?></span>
+                <span class="post-time">
+                    <?php
+                    date_default_timezone_set('Asia/Bangkok'); // Set the timezone to UTC+7
+                    $date = $post['post_date'];
+                    echo date('H:i d M Y');
+                    ?>
+                </span>
+            </div>
         </div>
         <div class="post-content">
             <h2><?php echo $post['title']; ?></h2>
@@ -26,4 +35,3 @@ foreach ($posts as $post) { ?>
         </div>
     </div>
 <?php } ?>
-?>

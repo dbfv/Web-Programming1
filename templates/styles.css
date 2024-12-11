@@ -294,6 +294,12 @@ main {
     background-color: #218838;
 }
 
+.post-time {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
 
 /* create_post */
 .form-group {
@@ -419,3 +425,63 @@ button:hover {
     padding: 8px;
     margin-top: 5px;
     border: 1px solid blue;}
+
+/* Delete_post.php */
+.delete-post {
+    position: absolute;
+    margin: 8px;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: black;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+/* user_posts.php */
+.user-posts {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.user-posts h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.user-posts .post {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-posts .post h3 {
+    margin: 0 0 10px;
+    color: #007bff; /* Use your primary color for post titles */
+}
+
+.user-posts .post p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.user-posts .post img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.user-posts .post-time {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
