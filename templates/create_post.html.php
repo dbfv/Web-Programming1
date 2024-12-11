@@ -1,5 +1,5 @@
 <?php
-// require_once "../includes/authorization.php";
+require_once "../includes/authorization.php";
 
 ?>
 
