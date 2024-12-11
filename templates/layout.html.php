@@ -32,7 +32,7 @@ include '../includes/queries/posts.php';
         <div class="menu">
             <a href="../php/create_post.php" class="menu-item"><i class="bi bi-plus"></i></a>
             <a href="" class="menu-item"><i class="bi bi-bell"></i></a>
-            <a href="" class="menu-item"><i class="bi bi-save"></i></a>
+            <a href="../php/modules.php" class="menu-item"><i class="bi bi-save"></i></a>
             <a href="../php/profile.php" class="menu-item"><img
                     src="../images/public/<?= $_SESSION['user']['avatar'] ?>" alt=""></a>
         </div>
@@ -42,17 +42,16 @@ include '../includes/queries/posts.php';
         <aside style="left: 0">
             <ul class="subjects">
                 <!-- php for subjects goes here-->
-                <?php foreach ($modules as $module) { ?>
+                <?php foreach ($modules as $module): ?>
                     <li>
-                        <a href="">
+                        <a href="../php/module_posts.php?id=<?= $module['id']; ?>">
                             <b>
                                 <p> <?php echo $module['name'] ?> </p>
                             </b>
-                            <span class="description"> <?php echo $module['code'] ?>
-                            </span>
+                            <span class="description"> <?php echo $module['code'] ?></span>
                         </a>
                     </li>
-                <?php } ?>
+                <?php endforeach; ?>
             </ul>
         </aside>
 
@@ -61,14 +60,17 @@ include '../includes/queries/posts.php';
 
                 <!-- php for users goes here -->
 
-                <?php foreach ($users as $user) { ?>
-                    <li>
-                        <a href="#">
-                            <img src="../images/public/<?= $user['avatar'] ?>">
-                            <p> <?php echo $user['username']; ?> </p>
-                        </a>
-                    </li>
-                <?php } ?>
+                <ul class="users">
+                    <?php foreach ($users as $user): ?>
+                        <li>
+                            <a href="../php/user_posts.php?id=<?= $user['id']; ?>">
+                                <img src="../images/public/<?= htmlspecialchars($user['avatar']); ?>"
+                                    alt="<?= htmlspecialchars($user['username']); ?>'s Avatar">
+                                <p><?php echo htmlspecialchars($user['username']); ?></p>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
             </ul>
         </aside>
 
