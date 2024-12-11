@@ -233,11 +233,6 @@ a {
                 Log In
             </div>
         </button>
-        <div class='credits'>
-            <a href='https://codepen.io/marko-zub/' target='_blank'>
-                My other codepens
-            </a>
-        </div>
     </form>
 
 </body>
