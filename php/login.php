@@ -15,7 +15,7 @@ $user = $statement->fetch();
 
 if (isset($user) && $password == $user['password']) {
     session_start();
-    $_SESSION['Authorized'] = TRUE;
+    $_SESSION['Validated'] = TRUE;
     $_SESSION['user'] = $user;
     header("Location: index.php");
     exit;
